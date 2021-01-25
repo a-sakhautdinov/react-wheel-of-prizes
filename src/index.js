@@ -41,7 +41,7 @@ const WheelComponent = ({
     let canvas = document.getElementById('canvas')
     if (navigator.appVersion.indexOf('MSIE') !== -1) {
       canvas = document.createElement('canvas')
-      canvas.setAttribute('width', 1000)
+      canvas.setAttribute('width', 600)
       canvas.setAttribute('height', 600)
       canvas.setAttribute('id', 'canvas')
       document.getElementById('wheel').appendChild(canvas)
@@ -101,13 +101,13 @@ const WheelComponent = ({
   const wheelDraw = () => {
     clear()
     drawWheel()
-    drawNeedle()
+    // drawNeedle()
   }
 
   const draw = () => {
     clear()
     drawWheel()
-    drawNeedle()
+    // drawNeedle()
   }
 
   const drawSegment = (key, lastAngle, angle) => {
@@ -197,13 +197,13 @@ const WheelComponent = ({
   }
   const clear = () => {
     const ctx = canvasContext
-    ctx.clearRect(0, 0, 1000, 800)
+    ctx.clearRect(0, 0, 600, 800)
   }
   return (
     <div id='wheel'>
       <canvas
         id='canvas'
-        width='1000'
+        width='600'
         height='800'
         style={{
           pointerEvents: isFinished && !isOnlyOnce ? 'none' : 'auto'
